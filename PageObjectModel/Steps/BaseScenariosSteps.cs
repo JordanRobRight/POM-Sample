@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PageObjectModel.Pages;
+using PageObjectModel.Utils.Selenium;
+using TechTalk.SpecFlow;
 
 namespace PageObjectModel.Steps
 {
-    class BaseScenariosSteps
+    [Binding]
+    public sealed class BaseScenariosSteps : BaseSteps
     {
+
+
+        [Given(@"I navigate to the homepage")]
+        public void GivenINavigateToTheHomepage() => InstanceOf<BasePage>().NavigateMainEnterPoint();
+
     }
 }

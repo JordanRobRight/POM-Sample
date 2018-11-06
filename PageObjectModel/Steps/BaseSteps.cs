@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PageObjectModel.Pages;
 
 namespace PageObjectModel.Steps
 {
-    class BaseSteps
+    public class BaseSteps : Page
     {
+        //this file is a place holder to follow POM concepts
     }
 }

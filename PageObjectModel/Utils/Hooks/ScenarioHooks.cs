@@ -11,17 +11,14 @@ namespace PageObjectModel.Utils.Hooks
     [Binding]
     internal static class ScenarioHooks
     {
-        internal static void StartWebDriver()
+        [BeforeScenario]
+        internal static  void StartWebDriver()
         {
-            /*if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("PhantomJS"))
-            {
-                DriverController.Instance.StartPhantomJs();
-            }
-            else*/ if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("Chrome"))
+            if(ScenarioContext.Current.ScenarioInfo.Tags.Contains("Chrome"))
             {
                 DriverController.Instance.StartChrome();
             }
-            else if(ScenarioContext.Current.ScenarioInfo.Tags.Contains("Debug"))
+            else if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("Debug"))
             {
                 DriverController.Instance.StartChrome();
             }
@@ -29,13 +26,16 @@ namespace PageObjectModel.Utils.Hooks
             {
                 DriverController.Instance.StartChrome();
             }
-        }
 
+        }
         [AfterScenario]
         internal static void StopWebDriver()
         {
             if (!ScenarioContext.Current.ScenarioInfo.Tags.Contains("Debug"))
-                DriverController.Instance.StopWebDriver();
+                DriverController.Instance.StartChrome();
+            {
+
+            }
         }
     }
 }

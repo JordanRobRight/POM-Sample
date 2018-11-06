@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PageObjectModel.Utils.Selenium;
 
 namespace PageObjectModel.Pages
 {
-    class Page
+    public abstract class Page
     {
+        protected T InstanceOf<T>() where T : BasePage, new()
+        {
+            var pageClass = new T {Driver = Driver.Browser()};
+            return pageClass;
+        }
     }
 }
