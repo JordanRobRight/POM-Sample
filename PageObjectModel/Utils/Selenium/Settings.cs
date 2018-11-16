@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static System.Configuration.ConfigurationManager;
 
 namespace PageObjectModel.Utils.Selenium
 {
-    class Settings
+    public class Settings
     {
+        public static string BaseUrl = AppSettings["BaseUrl"];
+        public static string WelcomeMessage = AppSettings["WelcomeMessage"];
+        public static string TestEmail = AppSettings["TestEmail"];
     }
 }

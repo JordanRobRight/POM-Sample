@@ -1,5 +1,8 @@
 ﻿using OpenQA.Selenium;
+using PageObjectModel.Utils.Selenium;
+using System;
 using static PageObjectModel.Utils.Selenium.Driver;
+using static PageObjectModel.Utils.Selenium.Settings;
 
 namespace PageObjectModel.Pages
 {
@@ -9,9 +12,10 @@ namespace PageObjectModel.Pages
 
         public void NavigateMainEnterPoint()
         {
-            const string url = "https://www.wikipedia.org/";
-            Browser().Navigate().GoToUrl(url);
+            var baseUrl = BaseUrl;
+            Browser().Navigate().GoToUrl(baseUrl);
             Browser().Manage().Window.Maximize();
+            Console.WriteLine(WelcomeMessage);
         }
     }
 }
