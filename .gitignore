@@ -1,2 +1,4 @@
 
 .vs/POMSolution/DesignTimeBuild/.dtbcache
+*.cache
+*.cache
